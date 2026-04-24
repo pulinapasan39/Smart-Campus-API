@@ -90,15 +90,15 @@ curl -X GET http://localhost:8080/SmartCampusAPI/api/v1
 
 ### 2. Create a Room
 ```bash
-curl -X POST http://localhost:8080/SmartCampusAPI/api/v1/rooms \
--H "Content-Type: application/json" \
+curl -X POST http://localhost:8080/SmartCampusAPI/api/v1/rooms 
+-H "Content-Type: application/json" 
 -d "{\"id\": \"LIB-301\", \"name\": \"Library Quiet Study\", \"capacity\": 50}"
 ```
 
 ### 3. Create a Sensor
 ```bash
-curl -X POST http://localhost:8080/SmartCampusAPI/api/v1/sensors \
--H "Content-Type: application/json" \
+curl -X POST http://localhost:8080/SmartCampusAPI/api/v1/sensors 
+-H "Content-Type: application/json" 
 -d "{\"id\": \"TEMP-001\", \"type\": \"Temperature\", \"status\": \"ACTIVE\", \"currentValue\": 22.5, \"roomId\": \"LIB-301\"}"
 ```
 
@@ -109,8 +109,8 @@ curl -X GET "http://localhost:8080/SmartCampusAPI/api/v1/sensors?type=Temperatur
 
 ### 5. Add a Sensor Reading
 ```bash
-curl -X POST http://localhost:8080/SmartCampusAPI/api/v1/sensors/TEMP-001/readings \
--H "Content-Type: application/json" \
+curl -X POST http://localhost:8080/SmartCampusAPI/api/v1/sensors/TEMP-001/readings 
+-H "Content-Type: application/json" 
 -d "{\"value\": 25.5}"
 ```
 
