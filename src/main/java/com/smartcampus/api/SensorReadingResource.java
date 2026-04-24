@@ -33,7 +33,7 @@ public class SensorReadingResource {
                     .build();
         }
 
-        //get readings 
+        //get readings for this sensor
         List<SensorReading> readings = dataStore.getReadings().getOrDefault(sensorId, new ArrayList<>());
         return Response.ok(readings).build();
     }
@@ -68,7 +68,7 @@ public class SensorReadingResource {
                 .computeIfAbsent(sensorId, k -> new ArrayList<>())
                 .add(reading);
 
-        //update sensor's currentValue
+        //update the sensor's currentValue
         sensor.setCurrentValue(reading.getValue());
 
         return Response.status(Response.Status.CREATED)

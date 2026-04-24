@@ -10,6 +10,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
+import jakarta.ws.rs.PathParam;
 
 @Path("/sensors")
 @Produces(MediaType.APPLICATION_JSON)
@@ -76,4 +77,11 @@ public class SensorResource {
         
         return Response.ok(sensorList).build();
     }
+    
+    //sub-resource locator
+    @Path("/{sensorId}/readings")
+    public SensorReadingResource getSensorReadingResource(@PathParam("sensorId") String sensorId) {
+        return new SensorReadingResource(sensorId);
+    }
+    
 }

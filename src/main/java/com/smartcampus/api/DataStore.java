@@ -2,6 +2,7 @@ package com.smartcampus.api;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
 
 public class DataStore {
     
@@ -11,6 +12,7 @@ public class DataStore {
     //in-memory storage
     private final Map<String, Room> rooms = new HashMap<>();
     private final Map<String, Sensor> sensors = new HashMap<>();
+    private final Map<String, List<SensorReading>> readings = new HashMap<>();
     
     private DataStore() {
     }
@@ -28,5 +30,10 @@ public class DataStore {
     //sensr methods
     public Map<String, Sensor> getSensors() {
         return sensors;
+    }
+    
+    //readings methods
+    public Map<String, List<SensorReading>> getReadings() {
+        return readings;
     }
 }
